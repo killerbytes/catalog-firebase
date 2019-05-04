@@ -16,6 +16,7 @@
     "express-session": "^1.15.6",
     "firebase-admin": "^7.2.0",
     "jsonwebtoken": "^8.5.1",
+    "nodemon": "^1.19.0",
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
     "yup": "^0.27.0"
@@ -26,7 +27,6 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "nodemon": "^1.18.10"
+    "babel-preset-latest": "^6.24.1"
   }
 }
