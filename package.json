@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -rf dist && mkdir dist",
     "build": "babel src -d dist",
-    "start": "npm run clean && npm run build && node dist/app.js"
+    "start": "npm run clean && npm run build && nodemon dist/app.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -19,10 +19,10 @@
     "jsonwebtoken": "^8.5.1",
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "nodemon": "^1.19.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-dotenv": "^0.1.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
