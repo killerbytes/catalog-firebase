@@ -1,10 +1,9 @@
 import jwt from "jsonwebtoken";
-import { SECRET_KEY } from "babel-dotenv";
 
 export const tokenId = (req, res) => {
   const token = req.headers["x-access-token"];
 
-  return jwt.verify(token, SECRET_KEY, (err, decoded) => {
+  return jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
     if (err) {
       res.status(401).send(err);
     } else {

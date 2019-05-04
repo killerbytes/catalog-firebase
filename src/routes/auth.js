@@ -3,14 +3,13 @@ import * as User from "../services/users";
 import express from "express";
 const jwt = require("jsonwebtoken");
 import { OAuth2Strategy as GoogleStrategy } from "passport-google-oauth";
-import { CLIENT_ID, CLIENT_SECRET, SECRET_KEY } from "babel-dotenv";
 
 const router = express.Router();
 passport.use(
   new GoogleStrategy(
     {
-      clientID: CLIENT_ID,
-      clientSecret: CLIENT_SECRET,
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       callbackURL: "http://localhost:9000/auth/google/callback"
     },
     function(accessToken, refreshToken, profile, done) {
@@ -39,9 +38,9 @@ router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/login" }),
   function(req, res) {
-    const token = jwt.sign(req.user, SECRET_KEY);
+    const token = jwt.sign(req.user, process.env.SECRET_KEY);
 
-    jwt.verify(token, SECRET_KEY, (err, decoded) => {
+    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
       console.log(decoded);
     });
 
