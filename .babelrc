@@ -1,0 +1,22 @@
+{
+  "presets": ["latest"],
+  "ignore": ["node_modules"],
+  "plugins": [
+    "transform-inline-environment-variables",
+    "transform-object-rest-spread",
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+
+    [
+      "babel-plugin-dotenv",
+      {
+        "replacedModuleName": "babel-dotenv"
+      }
+    ]
+  ]
+}
