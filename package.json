@@ -5,9 +5,9 @@
   "license": "MIT",
   "author": "Joel Carlos",
   "scripts": {
+    "clean": "rm -rf dist && mkdir dist",
     "build": "babel src -d dist",
-    "start": "npm run build && node dist/app.js",
-    "debug": "nodemon --inspect app.js --exec babel-node js"
+    "start": "npm run clean && npm run build && node dist/app.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
